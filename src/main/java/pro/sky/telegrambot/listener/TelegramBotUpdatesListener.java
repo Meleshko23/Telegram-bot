@@ -52,7 +52,8 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
 
             // if the user sent the /start command
             if (mess.text().equals("/start")) {
-                SendMessage sendMess = new SendMessage(chatId, "¡Hola Amigo!");
+                SendMessage sendMess = new SendMessage(chatId,
+                        "¡Hola Amigo! \n Enter the date and time in the format: \n 01.01.2022 20:00 \n Enter a task");
                 SendResponse response = telegramBot.execute(sendMess);
             }
             Matcher matcher = pattern.matcher(mess.text());
