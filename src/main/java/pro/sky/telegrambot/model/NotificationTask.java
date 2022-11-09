@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 // entity for storing information about messages sent in a chat
 @Entity
@@ -65,11 +64,11 @@ public class NotificationTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NotificationTask that = (NotificationTask) o;
-        return Objects.equals(id, that.id) && Objects.equals(chartId, that.chartId) && Objects.equals(message, that.message) && Objects.equals(dateTime, that.dateTime);
+        return id.equals(that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, chartId, message, dateTime);
+        return id.hashCode();
     }
 }
